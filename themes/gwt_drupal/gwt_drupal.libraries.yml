@@ -1,0 +1,22 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/foundation.css: {}
+    component:
+      css/font-awesome.min.css: {}
+      # enable main.css to allow overrides to themes.css
+      # css/main.css: {}
+    theme:
+      css/themes.css: {}
+  js:
+    js/foundation.js: {}
+    # js/jquery.min.js: {}
+    js/theme.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+print:
+  css:
+    base:
+      css/print.css: {}

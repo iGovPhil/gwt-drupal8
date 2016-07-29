@@ -1,0 +1,47 @@
+name: GWT Drupal P
+type: theme
+description: 'Government Web Template theme'
+package: Core
+# version: VERSION
+# core: 8.x
+base theme: false
+
+version: '2.5.0'
+core: '8.x'
+project: 'drupal'
+screenshot: 'screenshot.png'
+
+libraries:
+  - gwt_drupal/global-styling
+regions:
+  content: Content
+  navigation: 'Top bar Left'
+  top_bar_right: 'Top Bar Right'
+  top_bar_search: 'Top Bar Search'
+  header: MastHead
+  ear_content: 'Ear Content 1'
+  ear_content_2: 'Ear Content 2'
+  banner: 'Banner Slider'
+  banner_2: 'Banner Content 1'
+  banner_3: 'Banner Content 2'
+  auxiliary_left: 'Auxiliary Left'
+  auxiliary_right: 'Auxiliary right'
+  breadcrumbs: Breadcrumbs
+  highlighted: Highlighted
+  help: Help
+  panel_top: 'Panel Top 1'
+  panel_top_2: 'Panel Top 2'
+  panel_top_3: 'Panel Top 3'
+  panel_top_4: 'Panel Top 4'
+  sidebar_first: 'Left sidebar'
+  sidebar_second: 'Right sidebar'
+  panel_bottom: 'Panel Bottom 1'
+  panel_bottom_2: 'Panel Bottom 2'
+  panel_bottom_3: 'Panel Bottom 3'
+  panel_bottom_4: 'Panel Bottom 4'
+  footer: 'Agency Footer 1'
+  footer_2: 'Agency Footer 2'
+  footer_3: 'Agency Footer 3'
+  footer_4: 'Agency Footer 4'
+  ;footer_standard: 'Standard Footer'
+  bottom: 'Page bottom'

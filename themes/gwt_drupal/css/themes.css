@@ -1,0 +1,255 @@
+/*
+ * Theme Name:         GWT-Drupal-8 P2
+ * Theme URI:          https://github.com/iGovPhil/gwt-drupal/
+ * Description:        Custom Drupal Zen sub-theme template
+ * Version:            2.5.0
+ * Author:             Voltz Jeturian
+ * Author URI:         https://github.com/v0j
+ *
+ * License:            GPL License
+ * License URI:        http://www.gnu.org/copyleft/gpl.html
+ */
+
+/**
+ * DO NOT MODIFY THEME STYLE
+ * please add your stylings to main.css
+ */
+
+/**
+ * General Styling
+ */
+/** links **/
+a,
+a:hover{
+}
+a:active,
+a:visited{
+}
+
+/**
+ * heading overrides
+ */
+h1{font-size: 48px}
+h2{font-size: 40px}
+h3{font-size: 31px}
+h4{font-size: 25px}
+h5{font-size: 20px}
+h6{font-size: 16px}
+
+.heading-large h1{font-size: 48px}
+.heading-large h2{font-size: 40px}
+.heading-large h3{font-size: 31px}
+.heading-large h4{font-size: 25px}
+.heading-large h5{font-size: 20px}
+.heading-large h6{font-size: 16px}
+
+.heading-normal h1{font-size: 44px}
+.heading-normal h2{font-size: 36px}
+.heading-normal h3{font-size: 27px}
+.heading-normal h4{font-size: 21px}
+.heading-normal h5{font-size: 16px}
+.heading-normal h6{font-size: 12px}
+
+.heading-small h1{font-size: 40px}
+.heading-small h2{font-size: 32px}
+.heading-small h3{font-size: 23px}
+.heading-small h4{font-size: 17px}
+.heading-small h5{font-size: 12px}
+.heading-small h6{font-size: 8px}
+
+/**
+ * accessibility settings
+ */
+/** accessibility-links **/
+#a11y-links{
+}
+#a11y-links ul,
+#a11y-shortcuts ul{
+  margin: 0;
+  overflow: hidden;
+  height: auto;
+  width: auto;
+}
+#a11y-links ul li,
+#a11y-shortcuts ul li{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#a11y-links ul li a,
+#a11y-shortcuts ul li a{
+  display: block;
+  padding: 0 20px;
+}
+#a11y-links ul li a,
+#a11y-shortcuts ul li a{
+  font-size: 0;
+}
+#a11y-links ul li.access-focus a,
+#a11y-shortcuts ul li.access-focus a{
+  font-size: inherit;
+}
+
+
+#a11y-container{
+  border-left: 1px solid #e9e9e9;
+}
+#a11y-container button{
+  color: #000;
+  background-color: #f7f7f7;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 10px;
+}
+#a11y-container a{
+  color: #000;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 10px;
+}
+#a11y-dropdown{
+  width: 60px !important;
+  padding: 0;
+  left: initial !important;
+}
+#a11y-dropdown #a11y-buttons li{
+  border: 0;
+}
+#a11y-dropdown #a11y-buttons li a{
+  width: 57px;
+  color: #000;
+  background-color: #f7f7f7;
+  margin: 0;
+}
+#a11y-container-mobile button{
+  color: #000;
+  background-color: #f7f7f7;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 5px;
+}
+#a11y-container-mobile a{
+  color: #000;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 5px;
+}
+#a11y-dropdown-mobile{
+  width: 38px !important;
+  padding: 0;
+  left: initial !important;
+}
+#a11y-dropdown-mobile #a11y-buttons li a{
+  width: 57px;
+}
+#a11y-modal{
+  padding-top: 50px;
+}
+
+/**
+ * specific region styling
+ */
+
+/**
+ * offCanvas section
+ */
+/** offCanvas **/
+#offCanvas{
+  /*overflow: auto;
+  height: 100vh;
+  background: #f7f7f7;*/
+  height: 100%;
+}
+#offCanvas .is-drilldown{
+  max-width: 250px !important;
+}
+.off-canvas-wrapper{
+  background: #f7f7f7;
+}
+/** off-canvas left **/
+.off-canvas.position-right .region-top-bar-search #search-block-form .form-item-search-block-form{
+  width: 100%;
+}
+.off-canvas.position-right .region-top-bar-search #search-block-form #edit-submit-btn{
+  font-size: 23px;
+}
+.off-canvas.position-right .menu-title{
+  padding: 1em;
+  margin: 0;
+}
+
+/**
+ * top-bar
+ */
+
+#top-bar .sticky{
+  background: #f7f7f7;
+  z-index: 11;
+  width: 100%;
+}
+#top-bar{
+  padding: 0;
+  font-size: 0.85em;
+  background: #f7f7f7;
+}
+#top-bar .menu.gov-ph{
+  float: left;
+}
+.top-bar, .top-bar ul{
+  background: none;
+}
+/* menu */
+#top-bar ul{
+}
+#top-bar ul li{
+}
+#top-bar ul li a,
+#top-bar ul li.active.is-dropdown-submenu-parent ul li a{
+  color: #000;
+  background: #f7f7f7;
+}
+#top-bar ul li a:hover,
+#top-bar ul li.active.is-dropdown-submenu-parent ul li a:hover{
+  background: #e4e4e4;
+}
+#top-bar ul li a{
+  color: #000;
+  line-height: 2em;
+  padding: .98rem 1rem;
+  border-right: 1px solid #e9e9e9;
+}
+#top-bar ul li.active a,
+#top-bar ul li.active a:visited{
+  background: #e4e4e4;
+  color: #000;
+}
+#top-bar ul li.is-dropdown-submenu-parent a{
+  padding-right: 1.5rem;
+}
+#top-bar ul li.is-dropdown-submenu-parent ul li{
+}
+#top-bar ul li.is-dropdown-submenu-parent ul li a{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#top-bar .top-bar-right{
+
+}
+#top-bar .top-bar-right .block{
+  margin: 0;
+}
+#top-bar .top-bar-right ul li a{
+  border-right: 0;
+  border-left: 1px solid #e9e9e9;
+}
+#top-bar #block-search-form{
+  padding: .70em 1em;
+  border-left: 1px solid #e9e9e9;
+}
+/** top-bar-search **/
+.top-bar-right.a11y-container{
+  border-left: 1px solid #e9e9e9;
+}
+#search-block-form .form-item input {
+    margin-bottom: 0;
+}
