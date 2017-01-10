@@ -1,26 +1,25 @@
-# Goverment Website Template (GWT) for Drupal 8
+# Goverment Website Template (GWT) for Drupal
+
+This version is still under **heavy development** and is **not ready for production**.
 
 Notes:
 
 - See modulepositions.jpg in /images for this template's module positions.
 - Banner width should be 1250px
 - Any content in the masthead area should NOT EXCEED 100px.
-- For experienced Joomla users, please report any template issues to helpdesk@i.gov.ph.
+- For experienced Drupal themers, please report any template issues to helpdesk@i.gov.ph.
 
 ## Known bugs and requests for enhancements (RFEs)
-For a list of known issues and RFEs, check the [issue tracking system](https://github.com/iGovPhil/gwt-drupal/issues).
+For a list of known issues and RFEs, check the [issue tracking system](https://github.com/iGovPhil/gwt-drupal8/issues).
 
-- ~~White screen error on certain installation (updates), no admin menu~~
-- ~~Access key missing node error~~ accessibility features temporarily disabled
-- ~~some access keys not working properly (site map)~~ accessibility features temporarily disabled
+- no known issue submitted as of the moment
 
-## CHANGE LOGS
-**03-03-2016**
+## Development status:
 
-- Change Version Branding Pansit version 2.0
-- Revert default media query from Foundation
-- Improved background footer
-- transparency seal image resized into 225px square
-- transparency seal added alt and title text attribute
-- temporarily disable accessibility option (red button)
-- fix PDO error on using GWT-Mega menu feature
+10%
+\===
+
+**01-10-2017**
+- added helper functions for dynamic classes loading
+- override and remove unecessary tags for auxiliary menu region
+- add minor fixes
