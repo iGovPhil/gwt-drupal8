@@ -15,9 +15,7 @@ For a list of known issues and RFEs, check the [issue tracking system](https://g
 - no known issue submitted as of the moment
 
 ## Development status:
-
 10%
-\===
 
 **01-10-2017**
 - added helper functions for dynamic classes loading
