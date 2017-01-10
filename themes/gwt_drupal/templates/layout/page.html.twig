@@ -85,7 +85,7 @@
           {{ page.top_bar_search }}
         </aside>
       {% endif %}
-      {# insert menu here #}
+      {{ page.primary_menu_mobile }}
     </div>{# /.off-canvas.position-right #}
     <div class="off-canvas-content" data-off-canvas-content>
       <div class="title-bar hide-for-large" id="mobile-top-bar">
@@ -142,7 +142,7 @@
         </div>
         {% endif %}
         <ul class="menu gov-ph" class="top-bar-left"><li><a class="title-bar-title" href="http://www.gov.ph" target="_blank">GOVPH</a></li></ul>
-        {{ page.primary_menu }}
+        {{ page.navigation }}
 
       </div>{# /.row #}
     </div>{# /.sticky #}
@@ -152,6 +152,17 @@
   <div class="row">
   {# TODO: add republic text to theme settings/site information #}
   {{ page.header }}
+  {# TODO: add dynamic loading of class for ear content #}
+  {% if page.ear_content %}
+  <div class="ear-content content-container">
+    {{ page.ear_content }}
+  </div>
+  {% endif %}
+  {% if page.ear_content_2 %}
+  <div class="ear-content content-container">
+    {{ page.ear_content_2 }}
+  </div>
+  {% endif %}
   </div>
 </header>
 
@@ -176,9 +187,12 @@
 </div>
 {% endif %}
 
-{% if page.secondary_menu %}
+{% if page.auxiliary_left %}
 <div id="auxiliary-menu" class="show-for-large">
-{{ page.secondary_menu }}
+  <div class="row">
+    {{ page.auxiliary_left }}
+    {{ page.auxiliary_right }}
+  </div>
 </div>
 {% endif %}
 
@@ -195,25 +209,23 @@
 {% if page.panel_top or page.panel_top_2 or page.panel_top_3 or page.panel_top_4 %}
 <div id="panel-top">
   <div class="row">
-  {# TODO: add dynamic class for panel-top #}
-    
     {% if page.panel_top %}
-      <div role="complementary" class="panel-top columns large-3 medium-3">
+      <div role="complementary" class="panel-top columns {{ page.class_panel_top }}">
         {{ page.panel_top }}
       </div>
     {% endif %}
     {% if page.panel_top_2 %}
-      <div role="complementary" class="panel-top columns large-3 medium-3">
+      <div role="complementary" class="panel-top columns {{ page.class_panel_top }}">
         {{ page.panel_top_2 }}
       </div>
     {% endif %}
     {% if page.panel_top_3 %}
-      <div role="complementary" class="panel-top columns large-3 medium-3">
-        {{ page.panel_top_2 }}
+      <div role="complementary" class="panel-top columns {{ page.class_panel_top }}">
+        {{ page.panel_top_3 }}
       </div>
     {% endif %}
     {% if page.panel_top_4 %}
-      <div role="complementary" class="panel-top columns large-3 medium-3">
+      <div role="complementary" class="panel-top columns {{ page.class_panel_top }}">
         {{ page.panel_top_4 }}
       </div>
     {% endif %}
@@ -224,49 +236,44 @@
   <div class="row">
   {{ page.highlighted }}
   {{ page.help }}
-  {# TODO: add dynamic class for content and sidebars #}
-  <div id="content" class="columns sidebars large-6 medium-6 large-push-3 medium-push-3">
+  <div id="content" class="columns {{ page.class_content }}">
     {{ page.content }}
-  </div>{# /.layout-content #}
+  </div>
 
   {% if page.sidebar_first %}
-    <aside id="sidebar-first" role="complementary" class="columns sidebars large-3 medium-3 large-pull-9 medium-pull-9">
+    <aside id="sidebar-first" role="complementary" class="columns sidebars {{ page.class_sidebar_first }}">
       {{ page.sidebar_first }}
     </aside>
   {% endif %}
 
   {% if page.sidebar_second %}
-    <aside id="sidebar-second" role="complementary" class="columns sidebars large-3 medium-3 large-pull-9 medium-pull-9">
+    <aside id="sidebar-second" role="complementary" class="columns sidebars {{ page.class_sidebar_second }}">
       {{ page.sidebar_second }}
     </aside>
   {% endif %}
   </div>
-
 </main>
-
 
 {% if page.panel_bottom or page.panel_bottom_2 or page.panel_bottom_3 or page.panel_bottom_4 %}
 <div id="panel-bottom" class="content-container">
   <div class="row">
-  {# TODO: add dynamic class for panel-top #}
-    
     {% if page.panel_bottom %}
-      <div role="complementary" class="panel-bottom columns large-3 medium-3">
+      <div role="complementary" class="panel-bottom columns {{ page.class_panel_bottom }}">
         {{ page.panel_bottom }}
       </div>
     {% endif %}
-    {% if page.panel_bototm_2 %}
-      <div role="complementary" class="panel-bottom columns large-3 medium-3">
+    {% if page.panel_bottom_2 %}
+      <div role="complementary" class="panel-bottom columns {{ page.class_panel_bottom }}">
         {{ page.panel_bottom_2 }}
       </div>
     {% endif %}
     {% if page.panel_bottom_3 %}
-      <div role="complementary" class="panel-bottom columns large-3 medium-3">
+      <div role="complementary" class="panel-bottom columns {{ page.class_panel_bottom }}">
         {{ page.panel_bottom_3 }}
       </div>
     {% endif %}
     {% if page.panel_bottom_4 %}
-      <div role="complementary" class="panel-bottom columns large-3 medium-3">
+      <div role="complementary" class="panel-bottom columns {{ page.class_panel_bottom }}">
         {{ page.panel_bottom_4 }}
       </div>
     {% endif %}
@@ -277,22 +284,22 @@
   <footer id="footer" role="contentinfo">
     <div class="row">
     {% if page.footer %}
-      <div role="complementary" class="columns large-3 medium-3">
+      <div role="complementary" class="columns {{ page.class_footer }}">
         {{ page.footer }}
       </div>
     {% endif %}
     {% if page.footer_2 %}
-      <div role="complementary" class="columns large-3 medium-3">
+      <div role="complementary" class="columns {{ page.class_footer }}">
         {{ page.footer_2 }}
       </div>
     {% endif %}
     {% if page.footer_3 %}
-      <div role="complementary" class="columns large-3 medium-3">
+      <div role="complementary" class="columns {{ page.class_footer }}">
         {{ page.footer_3 }}
       </div>
     {% endif %}
     {% if page.footer_4 %}
-      <div role="complementary" class="columns large-3 medium-3">
+      <div role="complementary" class="columns {{ page.class_footer }}">
         {{ page.footer_4 }}
       </div>
     {% endif %}
@@ -304,11 +311,21 @@
 <script type="text/javascript">
 (function(d, s, id) {
   var js, gjs = d.getElementById('gwt-standard-footer');
-
     js = d.createElement(s); js.id = id;
     js.src = "//gwhs.i.gov.ph/gwt-footer/footer.js";
     gjs.parentNode.insertBefore(js, gjs);
 }(document, 'script', 'gwt-footer-jsdk'));
+</script>
+<script type="text/javascript" id="gwt-pst">
+(function(d, eId) {
+  var js, gjs = d.getElementById(eId);
+  js = d.createElement('script'); js.id = 'gwt-pst-jsdk';
+  js.src = "//gwhs.i.gov.ph/pst/gwtpst.js?"+new Date().getTime();
+  gjs.parentNode.insertBefore(js, gjs);
+}(document, 'gwt-pst'));
+var gwtpstReady = function(){
+  new gwtpstTime('pst-time');
+}
 </script>
 <div><a href="#page" id="back-to-top">
     <span class="show-for-sr">Back to Top</span>
