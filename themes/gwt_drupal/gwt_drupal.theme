@@ -35,6 +35,110 @@ function gwt_drupal_preprocess_html(&$variables){
   }
 }
 
+/** 
+ * implementation of hook_preprocess_page()
+ *
+ * @see template_preprocess_page()
+ */
+function gwt_drupal_preprocess_page(&$variables) {
+  // retrieve region
+  // drupal_set_message('<pre>'.print_r($variables['page'], 1).'</pre>', 'status', FALSE);
+  
+  $class_panel_top = _gwt_drupal_multi_column($variables['page']['panel_top'],
+    $variables['page']['panel_top_2'],
+    $variables['page']['panel_top_3'],
+    $variables['page']['panel_top_4']
+    );
+  $variables['page']['class_panel_top'] = $class_panel_top.' panel-top';
+
+  $class_panel_bottom = _gwt_drupal_multi_column($variables['page']['panel_bottom'],
+    $variables['page']['panel_bottom_2'],
+    $variables['page']['panel_bottom_3'],
+    $variables['page']['panel_bottom_4']
+    );
+  $variables['page']['class_panel_bottom'] = $class_panel_bottom.' panel-bottom';
+
+  $class_footer = _gwt_drupal_multi_column($variables['page']['footer'],
+    $variables['page']['footer_2'],
+    $variables['page']['footer_3'],
+    $variables['page']['footer_4']
+    );
+  $variables['page']['class_footer'] = $class_footer.' panel-bottom';
+
+  // dynamic class for content and sidebar
+  _gwt_drupal_dynamic_content($variables);
+}
+
+/**
+ * helper function
+ * dynamic content class and sidebar
+ */
+function _gwt_drupal_dynamic_content(&$variables){
+  $column_count = 0;
+  $class_content = 'columns ';
+  $class_sidebar_first = 'columns ';
+  $class_sidebar_second = 'columns ';
+  if(!empty($variables['page']['sidebar_first'])){
+    $column_count++;
+    $class_content .= 'large-push-3 medium-push-3 ';
+  }
+  if(!empty($variables['page']['sidebar_second'])){
+    $column_count++;
+  }
+
+  if($column_count == 0){
+    $class_content .= 'large-12 medium-12';
+  }
+  if($column_count == 1){
+    $class_content .= 'large-9 medium-9';
+    $class_sidebar_first .= 'large-3 medium-3 large-pull-9 medium-pull-9';
+    $class_sidebar_second .= 'large-3 medium-3';
+  }
+  if($column_count == 2){
+    $class_content .= 'large-6 medium-6';
+    $class_sidebar_first .= 'large-3 medium-3 large-pull-6 medium-pull-6';
+    $class_sidebar_second .= 'large-3 medium-3';
+  }
+
+  $variables['page']['class_content'] = $class_content;
+  $variables['page']['class_sidebar_first'] = $class_sidebar_first;
+  $variables['page']['class_sidebar_second'] = $class_sidebar_second;
+}
+
+/**
+ * helper function
+ */
+function _gwt_drupal_multi_column($column1, $column2, $column3, $column4){
+  $column_count = 0;
+  $class = 'columns ';
+  if(!empty($column1)){
+    $column_count++;
+  }
+  if(!empty($column2)){
+    $column_count++;
+  }
+  if(!empty($column3)){
+    $column_count++;
+  }
+  if(!empty($column4)){
+    $column_count++;
+  }
+
+  if($column_count == 1){
+    $class .= 'large-12 medium-12';
+  }
+  if($column_count == 2){
+    $class .= 'large-6 medium-6';
+  }
+  if($column_count == 3){
+    $class .= 'large-4 medium-4';
+  }
+  if($column_count == 4){
+    $class .= 'large-3 medium-3';
+  }
+  return $class;
+}
+
 /**
  * implementation of hook form_alter()
  */
